@@ -55,7 +55,7 @@ for (let counter = 5; counter <= 100; counter += 5) {
 
 //Kata 5
 //Log all numbers up to 100 that are perfect squares. (1, 4, 9, ..., 81, 100)
-createHeadingElements('Kata 5')
+createHeadingElements('KATA 5')
 const kata5List = document.createElement('ul')
 for (let counter5 = 1; counter5 <= 100; counter5 += 1) {
     const counter5IsPerfectSquare = Number.isInteger(Math.sqrt(counter5))
@@ -69,7 +69,7 @@ for (let counter5 = 1; counter5 <= 100; counter5 += 1) {
 
 //Kata 6
 //Log the numbers counting backwards from 20 to 1. (20, 19, 18, ..., 2, 1)
-createHeadingElements('Kata 6')
+createHeadingElements('KATA 6')
 const kata6List = document.createElement('ul')
 for (let counter6 = 20; counter6 >= 1; counter6 -= 1) {
     let liElement = document.createElement('li')
@@ -81,7 +81,7 @@ for (let counter6 = 20; counter6 >= 1; counter6 -= 1) {
 
 //Kata 7
 //Log the even numbers counting backwards from 20. (20, 18, 16, ..., 4, 2)
-createHeadingElements('Kata 7')
+createHeadingElements('KATA 7')
 const kata7List = document.createElement('ul')
 for (let counter7 = 20; counter7 >= 1; counter7 -= 2) {
     let liElement = document.createElement('li')
@@ -93,7 +93,7 @@ for (let counter7 = 20; counter7 >= 1; counter7 -= 2) {
 
 //Kata 8
 //Log the odd numbers from 20 to 1, counting backwards. (19, 17, 15, ..., 3, 1)
-createHeadingElements('Kata 8')
+createHeadingElements('KATA 8')
 const kata8List = document.createElement('ul')
 for (let counter8 = 19; counter8 >= 1; counter8 -= 2) {
     let liElement = document.createElement('li')
@@ -105,7 +105,7 @@ for (let counter8 = 19; counter8 >= 1; counter8 -= 2) {
 
 //Kata 9
 //Log the multiples of 5, counting down from 100. (100, 95, 90, ..., 10, 5)
-createHeadingElements('Kata 9')
+createHeadingElements('KATA 9')
 const kata9List = document.createElement('ul')
 for (let counter9 = 100; counter9 >= 5; counter9 -= 5) {
     let liElement = document.createElement('li')
@@ -117,7 +117,7 @@ for (let counter9 = 100; counter9 >= 5; counter9 -= 5) {
 
 //Kata 10
 //Log the numbers that are perfect squares, counting down from 100. (100, 81, 64, ..., 4, 1)
-createHeadingElements('Kata 10')
+createHeadingElements('KATA 10')
 const kata10List = document.createElement('ul')
 for (let counter10 = 100; counter10 >= 1; counter10 -= 1) {
     const counter10IsPerfectSquare = Number.isInteger(Math.sqrt(counter10))
@@ -173,17 +173,45 @@ for (index = 0; index < sampleArray.length; index++) {
 createHeadingElements('KATA 14')
 
 
+// const kata14List = document.createElement('ul')
+
+// for (index = 0; index < sampleArray.length; index++) {
+
+//     const PerfectSquare = sampleArray[index] * sampleArray[index]
+
+
+//     let liElement = document.createElement('li')
+//     parentElement.append(kata14List)
+//     kata14List.append(liElement)
+//     liElement.append(PerfectSquare)
+
+// }
+
+
 const kata14List = document.createElement('ul')
 
 for (index = 0; index < sampleArray.length; index++) {
 
-    const PerfectSquare = sampleArray[index] * sampleArray[index]
+    const square_it = (element) => element ** 2
 
+    const sampleArray2 = sampleArray.map(square_it)
+
+    let currentIndex2 = sampleArray2[index]
 
     let liElement = document.createElement('li')
+
     parentElement.append(kata14List)
     kata14List.append(liElement)
-    liElement.append(PerfectSquare)
+    liElement.append(currentIndex2)
+
+
+    /*const PerfectSquare = Number.isInteger(Math.sqrt(index))
+    if (PerfectSquare) {
+        let liElement = document.createElement('li')
+        parentElement.append(kata14List)
+        kata14List.append(liElement)
+        liElement.append(currentIndex)
+    }   */
 
 }
 
@@ -236,12 +264,12 @@ liElement.append(min);
 
 //Kata 18
 //Display the largest element in sampleArray.
-createHeadingElements('Kata 18')
+createHeadingElements('KATA 18')
 const kata18List = document.createElement('ul')
 let max = sampleArray.reduce(function (a, b) {
     return Math.max(a, b);
 
-});
+})
 let liElement2 = document.createElement('li')
 parentElement.append(kata18List)
 kata18List.append(liElement2)
@@ -259,18 +287,47 @@ for (counter = 0; counter < 20; counter += 1) {
 //Kata 20
 // Display 20 solid gray rectangles, each 20px high, with widths ranging evenly from 105px to 200px (remember #4, above).
 
+createHeadingElements("KATA 20");
+let blockwidth20 = 105;
+
+for (counter = 0; counter < 20; counter += 1) {
+    const greyDiv = document.createElement("div");
+    greyDiv.setAttribute("class", "greyBlocks20");
+    greyDiv.style.width = blockwidth20 + "px";
+    blockwidth20 += 5;
+    parentElement.append(greyDiv);
+}
+
 //Kata 21
 // Display 20 solid gray rectangles, each 20px high, with widths in pixels given by the 20 elements of sampleArray.
-createHeadingElements('KATA 20')
+createHeadingElements('KATA 21')
 for (counter = 0; counter < 20; counter += 1) {
     let widthPixels = sampleArray[counter]
     const greyDiv = document.createElement('div')
-    greyDiv.setAttribute('class', 'greyBlocks2')
+    greyDiv.setAttribute('class', 'greyBlocks20')
     greyDiv.style.width = widthPixels + 'px'
     parentElement.append(greyDiv)
 }
 //Kata 22
 // As in #21, but alternate colors so that every other rectangle is red.
-
+createHeadingElements("KATA 22");
+for (counter = 0; counter < 20; counter += 1) {
+    let widthPixels = sampleArray[counter];
+    const greyDiv = document.createElement("div");
+    greyDiv.setAttribute("class", "greyBlocks22");
+    greyDiv.style.width = widthPixels + "px";
+    parentElement.append(greyDiv);
+}
 //Kata 23
 //As in #21, but color the rectangles with even widths red.
+createHeadingElements("KATA 23");
+for (counter = 0; counter < 20; counter += 1) {
+    let widthPixels = sampleArray[counter];
+    const greyDiv = document.createElement("div");
+    greyDiv.setAttribute("class", "greyBlocks23");
+    greyDiv.style.width = widthPixels + "px";
+    if (widthPixels % 2 === 0) {
+        greyDiv.style.backgroundColor = "red";
+    }
+    parentElement.append(greyDiv);
+}
