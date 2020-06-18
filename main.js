@@ -66,6 +66,69 @@ for (let counter5 = 1; counter5 <= 100; counter5 += 1) {
         liElement.append(counter5)
     }
 }
+
+//Kata 6
+//Log the numbers counting backwards from 20 to 1. (20, 19, 18, ..., 2, 1)
+createHeadingElements('Kata 6')
+const kata6List = document.createElement('ul')
+for (let counter6 = 20; counter6 >= 1; counter6 -= 1) {
+    let liElement = document.createElement('li')
+    parentElement.append(kata6List)
+    kata6List.append(liElement)
+    liElement.append(counter6)
+
+}
+
+//Kata 7
+//Log the even numbers counting backwards from 20. (20, 18, 16, ..., 4, 2)
+createHeadingElements('Kata 7')
+const kata7List = document.createElement('ul')
+for (let counter7 = 20; counter7 >= 1; counter7 -= 2) {
+    let liElement = document.createElement('li')
+    parentElement.append(kata7List)
+    kata7List.append(liElement)
+    liElement.append(counter7)
+
+}
+
+//Kata 8
+//Log the odd numbers from 20 to 1, counting backwards. (19, 17, 15, ..., 3, 1)
+createHeadingElements('Kata 8')
+const kata8List = document.createElement('ul')
+for (let counter8 = 19; counter8 >= 1; counter8 -= 2) {
+    let liElement = document.createElement('li')
+    parentElement.append(kata8List)
+    kata8List.append(liElement)
+    liElement.append(counter8)
+
+}
+
+//Kata 9
+//Log the multiples of 5, counting down from 100. (100, 95, 90, ..., 10, 5)
+createHeadingElements('Kata 9')
+const kata9List = document.createElement('ul')
+for (let counter9 = 100; counter9 >= 5; counter9 -= 5) {
+    let liElement = document.createElement('li')
+    parentElement.append(kata9List)
+    kata9List.append(liElement)
+    liElement.append(counter9)
+
+}
+
+//Kata 10
+//Log the numbers that are perfect squares, counting down from 100. (100, 81, 64, ..., 4, 1)
+createHeadingElements('Kata 10')
+const kata10List = document.createElement('ul')
+for (let counter10 = 100; counter10 >= 1; counter10 -= 1) {
+    const counter10IsPerfectSquare = Number.isInteger(Math.sqrt(counter10))
+    if (counter10IsPerfectSquare) {
+        let liElement = document.createElement('li')
+        parentElement.append(kata10List)
+        kata10List.append(liElement)
+        liElement.append(counter10)
+    }
+}
+
 //Kata 11
 // Display the 20 elements of sampleArray. (469, 755, 244, …, 940, 472)
 createHeadingElements('KATA 11')
@@ -90,6 +153,100 @@ for (let counter = 0; counter < sampleArray.length; counter += 1) {
     }
 }
 
+//Kata 13
+// Display all the odd numbers contained in sampleArray. (469, 755, 245, …, 179, 535)
+createHeadingElements('KATA 13')
+const kata13List = document.createElement('ul')
+for (index = 0; index < sampleArray.length; index++) {
+    let currentIndex = sampleArray[index]
+
+    if (currentIndex % 2 === 1) {
+        let liElement = document.createElement('li')
+        parentElement.append(kata13List)
+        kata13List.append(liElement)
+        liElement.append(currentIndex)
+    }
+}
+
+//Kata 14
+// Display the square of each element in sampleArray. (219961, 570025, …, 222784)
+createHeadingElements('KATA 14')
+
+
+const kata14List = document.createElement('ul')
+
+for (index = 0; index < sampleArray.length; index++) {
+
+    const PerfectSquare = sampleArray[index] * sampleArray[index]
+
+
+    let liElement = document.createElement('li')
+    parentElement.append(kata14List)
+    kata14List.append(liElement)
+    liElement.append(PerfectSquare)
+
+}
+
+//Kata 15
+// Display the sum of all the numbers from 1 to 20.
+createHeadingElements("KATA 15");
+const kata15List = document.createElement("ul");
+
+let total15 = 0;
+for (let counter = 1; counter <= 20; counter += 1) {
+    if (counter < 20) {
+        total15 = total15 + counter;
+    } else {
+        total15 = total15 + counter;
+        let liElement = document.createElement("li");
+        parentElement.append(kata15List);
+        kata15List.append(liElement);
+        liElement.append(total15);
+    }
+}
+
+//Kata 16
+// 16.Display the sum of all the elements in sampleArray.
+createHeadingElements("KATA 16");
+const kata16List = document.createElement("ul");
+
+let total16 = 0;
+for (let counter = 0; counter < sampleArray.length; counter += 1) {
+    if (counter < sampleArray.length - 1) {
+        total16 = total16 + sampleArray[counter];
+    } else {
+        total16 = total16 + sampleArray[counter];
+        let liElement = document.createElement("li");
+        parentElement.append(kata16List);
+        kata16List.append(liElement);
+        liElement.append(total16);
+    }
+}
+
+//Kata 17
+// Display the smallest element in sampleArray.
+createHeadingElements("KATA 17");
+const min = Math.min(...sampleArray);
+
+const kata17List = document.createElement("ul");
+let liElement = document.createElement("li");
+parentElement.append(kata17List);
+kata17List.append(liElement);
+liElement.append(min);
+
+//Kata 18
+//Display the largest element in sampleArray.
+createHeadingElements('Kata 18')
+const kata18List = document.createElement('ul')
+let max = sampleArray.reduce(function (a, b) {
+    return Math.max(a, b);
+
+});
+let liElement2 = document.createElement('li')
+parentElement.append(kata18List)
+kata18List.append(liElement2)
+liElement2.append(max)
+
 //Kata 19
 //Display 20 solid gray rectangles, each 20px high and 100px wide.
 createHeadingElements('KATA 19')
@@ -98,3 +255,22 @@ for (counter = 0; counter < 20; counter += 1) {
     greyDiv.setAttribute('class', 'greyBlocks')
     parentElement.append(greyDiv)
 }
+
+//Kata 20
+// Display 20 solid gray rectangles, each 20px high, with widths ranging evenly from 105px to 200px (remember #4, above).
+
+//Kata 21
+// Display 20 solid gray rectangles, each 20px high, with widths in pixels given by the 20 elements of sampleArray.
+createHeadingElements('KATA 20')
+for (counter = 0; counter < 20; counter += 1) {
+    let widthPixels = sampleArray[counter]
+    const greyDiv = document.createElement('div')
+    greyDiv.setAttribute('class', 'greyBlocks2')
+    greyDiv.style.width = widthPixels + 'px'
+    parentElement.append(greyDiv)
+}
+//Kata 22
+// As in #21, but alternate colors so that every other rectangle is red.
+
+//Kata 23
+//As in #21, but color the rectangles with even widths red.

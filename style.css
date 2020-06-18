@@ -1,6 +1,11 @@
 .greyBlocks{
-    height: 100px;
-    width: 20px;
+    height: 20px;
+    width: 100px;
+    background-color: grey;
+    margin: 5px;
+}
+.greyBlocks2{
+    height: 20px;
     background-color: grey;
     margin: 5px;
 }
